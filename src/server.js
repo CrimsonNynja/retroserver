@@ -32,7 +32,9 @@ const sendMessage = (json) => {
 };
 
 const sendMessageToGivenUser = (id, json) => {
-  clients[id].sendUTF(json);
+  if (clients[id]) {
+    clients[id].sendUTF(json);
+  }
 };
 
 const typesDef = {
